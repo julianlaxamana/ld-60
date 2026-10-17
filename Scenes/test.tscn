@@ -5,7 +5,9 @@
 [ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="3_ys1qc"]
 [ext_resource type="Shader" uid="uid://c2fn1n4cjxx5q" path="res://Shaders/pixel.gdshader" id="4_ys1qc"]
-[ext_resource type="Texture2D" uid="uid://dmin4y8xphh7y" path="res://Screenshot 2026-10-16 at 10.03.30 PM.png" id="6_i3aeo"]
+[ext_resource type="Texture2D" uid="uid://bpuo3r7610jpj" path="res://tree.png" id="6_i3aeo"]
+[ext_resource type="Texture2D" uid="uid://cwgh0gr1y2got" path="res://box.png" id="7_5wyu1"]
+[ext_resource type="FontFile" uid="uid://bg6w3u7u81nsp" path="res://GermaniaOne-Regular.ttf" id="8_0c07c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgm4q"]
 radius = 64.0
@@ -13,13 +15,18 @@ height = 190.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_35xla"]
 shader = ExtResource("4_ys1qc")
-shader_parameter/pixel_size = 5.00000019
+shader_parameter/pixel_size = 3.000000095
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ci1tc"]
 shader = ExtResource("3_qc4db")
 
 [sub_resource type="QuadMesh" id="QuadMesh_rgm4q"]
 size = Vector2(1280, 720)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgrle"]
+line_spacing = 4.0
+font = ExtResource("8_0c07c")
+font_size = 50
 
 [node name="Node2D" type="Node2D" unique_id=26238057]
 
@@ -70,7 +77,81 @@ script = ExtResource("3_ys1qc")
 material = SubResource("ShaderMaterial_ci1tc")
 mesh = SubResource("QuadMesh_rgm4q")
 
-[node name="Screenshot20261016At10_03_30Pm" type="Sprite2D" parent="." unique_id=1512785774]
-position = Vector2(-26.99997, 226.00002)
-scale = Vector2(0.4640884, 0.46408838)
+[node name="Tree" type="Sprite2D" parent="." unique_id=1755786688]
+texture_filter = 1
+position = Vector2(-227.00002, 127)
+scale = Vector2(3.6874998, 3.6874998)
 texture = ExtResource("6_i3aeo")
+
+[node name="Tree2" type="Sprite2D" parent="." unique_id=1991998913]
+texture_filter = 1
+position = Vector2(-124, 238)
+scale = Vector2(3.5609128, 3.5609128)
+texture = ExtResource("6_i3aeo")
+
+[node name="Tree3" type="Sprite2D" parent="." unique_id=2106522342]
+texture_filter = 1
+position = Vector2(-252.00003, 242.00002)
+scale = Vector2(3.6874998, 3.6874998)
+texture = ExtResource("6_i3aeo")
+
+[node name="Tree4" type="Sprite2D" parent="." unique_id=667748084]
+texture_filter = 1
+position = Vector2(-435, 85.00003)
+scale = Vector2(3.6874998, 3.6874998)
+texture = ExtResource("6_i3aeo")
+
+[node name="Tree5" type="Sprite2D" parent="." unique_id=54818376]
+texture_filter = 1
+position = Vector2(44.000015, 256)
+scale = Vector2(3.6874998, 3.6874998)
+texture = ExtResource("6_i3aeo")
+
+[node name="Tree6" type="Sprite2D" parent="." unique_id=1015773130]
+texture_filter = 1
+position = Vector2(-393.00003, 226.00002)
+scale = Vector2(3.6874998, 3.6874998)
+texture = ExtResource("6_i3aeo")
+
+[node name="Tree7" type="Sprite2D" parent="." unique_id=1562618287]
+texture_filter = 1
+position = Vector2(-347.00003, 124)
+scale = Vector2(3.6874998, 3.6874998)
+texture = ExtResource("6_i3aeo")
+
+[node name="Tree8" type="Sprite2D" parent="." unique_id=2098375361]
+texture_filter = 1
+position = Vector2(166.00003, 236)
+scale = Vector2(3.6874998, 3.6874998)
+texture = ExtResource("6_i3aeo")
+
+[node name="Tree9" type="Sprite2D" parent="." unique_id=1969888768]
+texture_filter = 1
+position = Vector2(333.00006, 240.00002)
+scale = Vector2(3.6874998, 3.6874998)
+texture = ExtResource("6_i3aeo")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=45588061]
+texture_filter = 1
+offset_left = -539.0
+offset_top = 69.0
+offset_right = 557.8745
+offset_bottom = 305.0
+texture = ExtResource("7_5wyu1")
+region_rect = Rect2(-1.8624916, -0.8387146, 202.6974, 103.708885)
+patch_margin_left = 2
+patch_margin_top = 3
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=116117463]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 14.0
+offset_right = 1065.0
+offset_bottom = 209.0
+text = "dialogue 
+jklasdfjaskldjasldkjasdasdasdk;asjdlaskjd
+asld"
+label_settings = SubResource("LabelSettings_pgrle")
+autowrap_mode = 2

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ld-60"
-run/main_scene="uid://bqu6fy8rb6h3j"
+run/main_scene="uid://bfcm5pbj8yjir"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,8 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
+window/size/mode=2
+window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

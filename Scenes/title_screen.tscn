@@ -6,11 +6,14 @@
 [ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="2_twnyg"]
 [ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="3_55kwv"]
 [ext_resource type="AudioStream" uid="uid://dl0nq3q2cccsl" path="res://output (1).wav" id="6_6vd4x"]
-[ext_resource type="Texture2D" uid="uid://dmin4y8xphh7y" path="res://Screenshot 2026-10-16 at 10.03.30 PM.png" id="6_12m1t"]
+[ext_resource type="Texture2D" uid="uid://bpuo3r7610jpj" path="res://tree.png" id="7_6vd4x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_twnyg"]
 font = ExtResource("1_twnyg")
 font_size = 150
+shadow_size = 4
+shadow_color = Color(0.29062468, 0, 0.060156092, 1)
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_12m1t"]
 shader = ExtResource("1_4gxqj")
@@ -50,7 +53,9 @@ color = Color(0, 0, 0, 1)
 [node name="Label" type="Label" parent="." unique_id=28123538]
 offset_top = 121.0
 offset_right = 1280.0
-offset_bottom = 595.0
+offset_bottom = 519.0
+theme_override_colors/font_shadow_color = Color(1, 0, 0.1764706, 1)
+theme_override_constants/shadow_outline_size = 500
 text = "[insert title here]"
 label_settings = SubResource("LabelSettings_twnyg")
 horizontal_alignment = 1
@@ -95,24 +100,40 @@ text = "> begin"
 stream = ExtResource("6_6vd4x")
 autoplay = true
 
-[node name="Screenshot20261016At10_03_30Pm" type="Sprite2D" parent="." unique_id=2125440517]
-position = Vector2(100, 506)
-scale = Vector2(0.63812155, 0.57211536)
-texture = ExtResource("6_12m1t")
+[node name="Tree4" type="Sprite2D" parent="." unique_id=855725774]
+texture_filter = 1
+position = Vector2(118, 510)
+scale = Vector2(3.6874998, 3.6874998)
+texture = ExtResource("7_6vd4x")
 
-[node name="Screenshot20261016At10_03_30Pm" type="Sprite2D" parent="Screenshot20261016At10_03_30Pm" unique_id=1565003277]
-position = Vector2(228.79654, 253.44536)
-scale = Vector2(0.95623755, 0.85281986)
-texture = ExtResource("6_12m1t")
+[node name="Tree5" type="Sprite2D" parent="." unique_id=90395893]
+texture_filter = 1
+position = Vector2(207, 616)
+scale = Vector2(4.234375, 4.234375)
+texture = ExtResource("7_6vd4x")
 
-[node name="Screenshot20261016At10_03_30Pm" type="Sprite2D" parent="Screenshot20261016At10_03_30Pm/Screenshot20261016At10_03_30Pm" unique_id=966831307]
-position = Vector2(1265.1676, -32.792786)
-scale = Vector2(1.0387844, 0.93133426)
-texture = ExtResource("6_12m1t")
+[node name="Tree6" type="Sprite2D" parent="." unique_id=1016659753]
+texture_filter = 1
+position = Vector2(353, 439.00003)
+scale = Vector2(3.3632808, 3.3632808)
+texture = ExtResource("7_6vd4x")
 
-[node name="Screenshot20261016At10_03_30Pm2" type="Sprite2D" parent="Screenshot20261016At10_03_30Pm" unique_id=922428955]
-position = Vector2(1681.4979, 3.4957762)
-scale = Vector2(0.8178627, 0.8178626)
-texture = ExtResource("6_12m1t")
+[node name="Tree7" type="Sprite2D" parent="." unique_id=1961359363]
+texture_filter = 1
+position = Vector2(922.00006, 612.00006)
+scale = Vector2(3.6874998, 3.6874998)
+texture = ExtResource("7_6vd4x")
+
+[node name="Tree8" type="Sprite2D" parent="." unique_id=372167033]
+texture_filter = 1
+position = Vector2(1040, 454.00006)
+scale = Vector2(2.4374998, 2.4374998)
+texture = ExtResource("7_6vd4x")
+
+[node name="Tree9" type="Sprite2D" parent="." unique_id=1754786325]
+texture_filter = 1
+position = Vector2(1138, 599)
+scale = Vector2(3.8359377, 3.8359377)
+texture = ExtResource("7_6vd4x")
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
