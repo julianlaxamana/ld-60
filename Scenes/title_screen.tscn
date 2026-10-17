@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bfcm5pbj8yjir"]
+
+[ext_resource type="Shader" uid="uid://c2fn1n4cjxx5q" path="res://Shaders/pixel.gdshader" id="1_4gxqj"]
+[ext_resource type="Script" uid="uid://4toyaguq4t71" path="res://Scripts/title_screen.gd" id="1_6vd4x"]
+[ext_resource type="FontFile" uid="uid://bg6w3u7u81nsp" path="res://GermaniaOne-Regular.ttf" id="1_twnyg"]
+[ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="2_twnyg"]
+[ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="3_55kwv"]
+[ext_resource type="AudioStream" uid="uid://dl0nq3q2cccsl" path="res://output (1).wav" id="6_6vd4x"]
+[ext_resource type="Texture2D" uid="uid://dmin4y8xphh7y" path="res://Screenshot 2026-10-16 at 10.03.30 PM.png" id="6_12m1t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_twnyg"]
+font = ExtResource("1_twnyg")
+font_size = 150
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_12m1t"]
+shader = ExtResource("1_4gxqj")
+shader_parameter/pixel_size = 5.00000019
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6vd4x"]
+shader = ExtResource("3_55kwv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_n82rj"]
+size = Vector2(1280, 720)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_55kwv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12m1t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vd4x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n82rj"]
+
+[sub_resource type="Theme" id="Theme_twnyg"]
+default_font = ExtResource("1_twnyg")
+Button/styles/disabled = SubResource("StyleBoxEmpty_55kwv")
+Button/styles/focus = SubResource("StyleBoxEmpty_12m1t")
+Button/styles/hover = SubResource("StyleBoxEmpty_6vd4x")
+Button/styles/normal = SubResource("StyleBoxEmpty_n82rj")
+
+[node name="TitleScreen" type="Node2D" unique_id=1009926236]
+script = ExtResource("1_6vd4x")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=288889414]
+offset_left = -867.0
+offset_top = -512.0
+offset_right = 1899.0
+offset_bottom = 946.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=28123538]
+offset_top = 121.0
+offset_right = 1280.0
+offset_bottom = 595.0
+text = "[insert title here]"
+label_settings = SubResource("LabelSettings_twnyg")
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1037025251]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1303113576]
+material = SubResource("ShaderMaterial_12m1t")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -826.0
+offset_top = -566.0
+offset_right = -140.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1194982698]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+script = ExtResource("2_twnyg")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer2" unique_id=448169439]
+material = SubResource("ShaderMaterial_6vd4x")
+mesh = SubResource("QuadMesh_n82rj")
+
+[node name="Button" type="Button" parent="." unique_id=1593156493]
+offset_left = 516.0
+offset_top = 493.0
+offset_right = 789.0
+offset_bottom = 604.0
+theme = SubResource("Theme_twnyg")
+theme_override_font_sizes/font_size = 75
+text = "> begin"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1065317754]
+stream = ExtResource("6_6vd4x")
+autoplay = true
+
+[node name="Screenshot20261016At10_03_30Pm" type="Sprite2D" parent="." unique_id=2125440517]
+position = Vector2(100, 506)
+scale = Vector2(0.63812155, 0.57211536)
+texture = ExtResource("6_12m1t")
+
+[node name="Screenshot20261016At10_03_30Pm" type="Sprite2D" parent="Screenshot20261016At10_03_30Pm" unique_id=1565003277]
+position = Vector2(228.79654, 253.44536)
+scale = Vector2(0.95623755, 0.85281986)
+texture = ExtResource("6_12m1t")
+
+[node name="Screenshot20261016At10_03_30Pm" type="Sprite2D" parent="Screenshot20261016At10_03_30Pm/Screenshot20261016At10_03_30Pm" unique_id=966831307]
+position = Vector2(1265.1676, -32.792786)
+scale = Vector2(1.0387844, 0.93133426)
+texture = ExtResource("6_12m1t")
+
+[node name="Screenshot20261016At10_03_30Pm2" type="Sprite2D" parent="Screenshot20261016At10_03_30Pm" unique_id=922428955]
+position = Vector2(1681.4979, 3.4957762)
+scale = Vector2(0.8178627, 0.8178626)
+texture = ExtResource("6_12m1t")
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -3,10 +3,17 @@
 [ext_resource type="Script" uid="uid://0lgik5m4kc7y" path="res://Scripts/controller.gd" id="1_8od7v"]
 [ext_resource type="Texture2D" uid="uid://bg0lib33mug34" path="res://icon.svg" id="1_lc1oi"]
 [ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="3_qc4db"]
+[ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="3_ys1qc"]
+[ext_resource type="Shader" uid="uid://c2fn1n4cjxx5q" path="res://Shaders/pixel.gdshader" id="4_ys1qc"]
+[ext_resource type="Texture2D" uid="uid://dmin4y8xphh7y" path="res://Screenshot 2026-10-16 at 10.03.30 PM.png" id="6_i3aeo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgm4q"]
 radius = 64.0
 height = 190.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35xla"]
+shader = ExtResource("4_ys1qc")
+shader_parameter/pixel_size = 5.00000019
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ci1tc"]
 shader = ExtResource("3_qc4db")
@@ -15,6 +22,16 @@ shader = ExtResource("3_qc4db")
 size = Vector2(1280, 720)
 
 [node name="Node2D" type="Node2D" unique_id=26238057]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1955380326]
+position = Vector2(-867, -512)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=979219902]
+offset_left = -867.0
+offset_top = -512.0
+offset_right = 1899.0
+offset_bottom = 946.0
+color = Color(0, 0, 0, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1251185237]
 script = ExtResource("1_8od7v")
@@ -27,10 +44,33 @@ texture = ExtResource("1_lc1oi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1874059257]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=764081715]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=764081715]
 offset = Vector2(640, 360)
 transform = Transform2D(1, 0, 0, 1, 640, 360)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D/CanvasLayer" unique_id=1330188997]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=326192604]
+material = SubResource("ShaderMaterial_35xla")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -826.0
+offset_top = -566.0
+offset_right = -140.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1849785673]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+script = ExtResource("3_ys1qc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer2" unique_id=63798208]
 material = SubResource("ShaderMaterial_ci1tc")
 mesh = SubResource("QuadMesh_rgm4q")
+
+[node name="Screenshot20261016At10_03_30Pm" type="Sprite2D" parent="." unique_id=1512785774]
+position = Vector2(-26.99997, 226.00002)
+scale = Vector2(0.4640884, 0.46408838)
+texture = ExtResource("6_i3aeo")
