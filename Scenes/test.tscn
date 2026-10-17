@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bqu6fy8rb6h3j"]
+
+[ext_resource type="Script" uid="uid://0lgik5m4kc7y" path="res://Scripts/controller.gd" id="1_8od7v"]
+[ext_resource type="Texture2D" uid="uid://bg0lib33mug34" path="res://icon.svg" id="1_lc1oi"]
+[ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="3_qc4db"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgm4q"]
+radius = 64.0
+height = 190.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ci1tc"]
+shader = ExtResource("3_qc4db")
+
+[sub_resource type="QuadMesh" id="QuadMesh_rgm4q"]
+size = Vector2(1280, 720)
+
+[node name="Node2D" type="Node2D" unique_id=26238057]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1251185237]
+script = ExtResource("1_8od7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1493142048]
+shape = SubResource("CapsuleShape2D_rgm4q")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=167649793]
+texture = ExtResource("1_lc1oi")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1874059257]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=764081715]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D/CanvasLayer" unique_id=1330188997]
+material = SubResource("ShaderMaterial_ci1tc")
+mesh = SubResource("QuadMesh_rgm4q")
