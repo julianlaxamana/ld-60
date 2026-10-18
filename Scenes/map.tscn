@@ -1,3 +1,121 @@
 [gd_scene format=3 uid="uid://dw8tbb0a3rhdl"]
 
+[ext_resource type="PackedScene" uid="uid://cptmwvr5tfton" path="res://Scenes/player.tscn" id="1_ci6au"]
+[ext_resource type="Texture2D" uid="uid://cgfitrqfnitl7" path="res://light.png" id="1_np2xp"]
+[ext_resource type="Shader" uid="uid://c2fn1n4cjxx5q" path="res://Shaders/pixel.gdshader" id="2_myvm1"]
+[ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="3_q0mm3"]
+[ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="4_np2xp"]
+[ext_resource type="Script" uid="uid://b44wyhmnco43g" path="res://Scenes/camera.gd" id="5_q0mm3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7jjh"]
+shader = ExtResource("2_myvm1")
+shader_parameter/pixel_size = 3.000000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6q3n4"]
+shader = ExtResource("4_np2xp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4c2oa"]
+size = Vector2(1280, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwvqn"]
+size = Vector2(159, 764)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgrle"]
+size = Vector2(1337, 52)
+
 [node name="Map" type="Node2D" unique_id=883407230]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1663659277]
+offset_left = -1025.0
+offset_top = -533.0
+offset_right = 2491.2532
+offset_bottom = 1458.0
+color = Color(0, 0, 0, 1)
+
+[node name="Light" type="Sprite2D" parent="." unique_id=1239814336]
+texture_filter = 1
+position = Vector2(-57.999996, 454.5)
+scale = Vector2(9.9375, 6.281249)
+texture = ExtResource("1_np2xp")
+
+[node name="CharacterBody2D" parent="." unique_id=1314263702 instance=ExtResource("1_ci6au")]
+position = Vector2(520, 280)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1809983776]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=420608170]
+material = SubResource("ShaderMaterial_w7jjh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -826.0
+offset_top = -566.0
+offset_right = -140.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1806582896]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+script = ExtResource("3_q0mm3")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer2" unique_id=1154395057]
+material = SubResource("ShaderMaterial_6q3n4")
+mesh = SubResource("QuadMesh_4c2oa")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=743895082]
+offset_left = -72.0
+offset_top = -364.0
+offset_right = 1315.0
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1404010289]
+offset_left = -95.0
+offset_top = 729.0
+offset_right = 1292.0
+offset_bottom = 1093.0
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=2071499925]
+offset_left = 1270.0
+offset_top = -374.0
+offset_right = 2657.0
+offset_bottom = 1101.0
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=1359573138]
+offset_left = -1446.0
+offset_top = -353.0
+offset_right = -59.0
+offset_bottom = 1122.0
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=153332377]
+offset_left = -188.0
+offset_top = 451.99997
+offset_right = 70.421265
+offset_bottom = 484.3829
+rotation = -0.41887903
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1052767669]
+position = Vector2(643, 363)
+script = ExtResource("5_q0mm3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=502971182]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1906709161]
+position = Vector2(1347, 360)
+shape = SubResource("RectangleShape2D_dwvqn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=508601155]
+position = Vector2(602.5, -30)
+shape = SubResource("RectangleShape2D_pgrle")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=582395252]
+position = Vector2(595, 757)
+shape = SubResource("RectangleShape2D_pgrle")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=123217219]
+position = Vector2(-137, 370)
+shape = SubResource("RectangleShape2D_dwvqn")

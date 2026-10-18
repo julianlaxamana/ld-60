@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgm4q"]
 radius = 64.0
-height = 190.0
+height = 138.15
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1314263702]
 script = ExtResource("1_cvnsp")

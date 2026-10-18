@@ -114,3 +114,9 @@ scale = Vector2(3.6874998, 3.6874998)
 texture = ExtResource("6_i3aeo")
 
 [node name="NinePatchRect" parent="." unique_id=533529597 instance=ExtResource("6_5wyu1")]
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1425749171]
+offset_left = 165.0
+offset_top = -157.0
+offset_right = 234.0
+offset_bottom = 292.0
