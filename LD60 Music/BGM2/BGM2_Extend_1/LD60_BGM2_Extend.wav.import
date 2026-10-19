@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjnwy733gppgr"
+path="res://.godot/imported/LD60_BGM2_Extend.wav-f4ac3ff0d976064c3b52505e7836cab9.sample"
+
+[deps]
+
+source_file="res://LD60 Music/BGM2/BGM2_Extend_1/LD60_BGM2_Extend.wav"
+dest_files=["res://.godot/imported/LD60_BGM2_Extend.wav-f4ac3ff0d976064c3b52505e7836cab9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

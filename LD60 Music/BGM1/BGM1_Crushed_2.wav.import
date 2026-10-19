@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dknl2q37jjffk"
+path="res://.godot/imported/BGM1_Crushed_2.wav-fbe36d1fcd884306f357f0fb636a8b49.sample"
+
+[deps]
+
+source_file="res://LD60 Music/BGM1/BGM1_Crushed_2.wav"
+dest_files=["res://.godot/imported/BGM1_Crushed_2.wav-fbe36d1fcd884306f357f0fb636a8b49.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

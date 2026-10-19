@@ -1,0 +1,220 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://cptmwvr5tfton" path="res://Scenes/player.tscn" id="1_player"]
+[ext_resource type="Shader" uid="uid://c2fn1n4cjxx5q" path="res://Shaders/pixel.gdshader" id="3_pixel"]
+[ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="4_canvas"]
+[ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="5_screen"]
+[ext_resource type="Script" uid="uid://b44wyhmnco43g" path="res://Scenes/camera.gd" id="6_camera"]
+[ext_resource type="Script" uid="uid://b75tvcjwfwn5e" path="res://Scripts/door.gd" id="7_door"]
+[ext_resource type="Texture2D" path="res://Sprites/fridge.png" id="8_fridge"]
+[ext_resource type="Texture2D" path="res://Sprites/counter.png" id="9_counter"]
+[ext_resource type="Texture2D" path="res://Sprites/inventory items/inventory item knife.png" id="10_knife"]
+[ext_resource type="Script" path="res://Scripts/knife_pickup.gd" id="11_pickup"]
+[ext_resource type="Script" uid="uid://ra5nwcu6on5q" path="res://Scripts/interactable.gd" id="12_interact"]
+[ext_resource type="Script" path="res://Scripts/food.gd" id="13_food"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_side"]
+size = Vector2(160, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_topbottom"]
+size = Vector2(1120, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(180, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fridge"]
+size = Vector2(96, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_counter"]
+size = Vector2(256, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knife_reach"]
+size = Vector2(200, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_table"]
+size = Vector2(200, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_table_reach"]
+size = Vector2(100, 120)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pixel"]
+shader = ExtResource("3_pixel")
+shader_parameter/pixel_size = 3.000000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_screen"]
+shader = ExtResource("5_screen")
+
+[sub_resource type="QuadMesh" id="QuadMesh_screen"]
+size = Vector2(1280, 720)
+
+[node name="Kitchen" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -1200.0
+offset_top = -900.0
+offset_right = 2000.0
+offset_bottom = 1500.0
+color = Color(0, 0, 0, 1)
+
+[node name="Fridge" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(100, 90)
+scale = Vector2(4, 4)
+texture = ExtResource("8_fridge")
+
+[node name="Counter" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(400, 50)
+scale = Vector2(4, 4)
+texture = ExtResource("9_counter")
+
+[node name="Knife" type="Area2D" parent="."]
+position = Vector2(400, 120)
+script = ExtResource("11_pickup")
+
+[node name="Sprite2D" type="Sprite2D" parent="Knife"]
+texture_filter = 1
+position = Vector2(0, -98)
+scale = Vector2(4, 4)
+texture = ExtResource("10_knife")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Knife"]
+shape = SubResource("RectangleShape2D_knife_reach")
+
+[node name="Table" type="ColorRect" parent="."]
+offset_left = 540.0
+offset_top = 260.0
+offset_right = 740.0
+offset_bottom = 340.0
+color = Color(0.36, 0.24, 0.16, 1)
+
+[node name="NoteSprite" type="ColorRect" parent="."]
+offset_left = 565.0
+offset_top = 284.0
+offset_right = 597.0
+offset_bottom = 308.0
+color = Color(0.92, 0.9, 0.82, 1)
+
+[node name="Note" type="Area2D" parent="."]
+position = Vector2(585, 380)
+script = ExtResource("12_interact")
+day_key = "note"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note"]
+shape = SubResource("RectangleShape2D_table_reach")
+
+[node name="Food" type="Area2D" parent="."]
+position = Vector2(695, 380)
+script = ExtResource("13_food")
+
+[node name="Sprite2D" type="Sprite2D" parent="Food"]
+texture_filter = 1
+position = Vector2(0, -85)
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food"]
+shape = SubResource("RectangleShape2D_table_reach")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_player")]
+position = Vector2(400, 380)
+
+[node name="WallTop" type="ColorRect" parent="."]
+offset_left = -1200.0
+offset_top = -900.0
+offset_right = 2000.0
+
+[node name="WallBottom" type="ColorRect" parent="."]
+offset_left = -1200.0
+offset_top = 560.0
+offset_right = 2000.0
+offset_bottom = 1500.0
+
+[node name="WallLeft" type="ColorRect" parent="."]
+offset_left = -1200.0
+offset_top = -900.0
+offset_bottom = 1500.0
+
+[node name="WallRight" type="ColorRect" parent="."]
+offset_left = 800.0
+offset_top = -900.0
+offset_right = 2000.0
+offset_bottom = 1500.0
+
+[node name="DoorPanel" type="ColorRect" parent="."]
+offset_left = 460.0
+offset_top = 490.0
+offset_right = 718.42
+offset_bottom = 522.38
+rotation = 1.9896753
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-80, 280)
+shape = SubResource("RectangleShape2D_side")
+
+[node name="Right" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(880, 280)
+shape = SubResource("RectangleShape2D_side")
+
+[node name="Top" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(400, -30)
+shape = SubResource("RectangleShape2D_topbottom")
+
+[node name="Bottom" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(400, 590)
+shape = SubResource("RectangleShape2D_topbottom")
+
+[node name="Fridge" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(100, 85)
+shape = SubResource("RectangleShape2D_fridge")
+
+[node name="Counter" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(400, 47)
+shape = SubResource("RectangleShape2D_counter")
+
+[node name="Table" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(640, 300)
+shape = SubResource("RectangleShape2D_table")
+
+[node name="DoorToRoom2" type="Area2D" parent="."]
+position = Vector2(400, 540)
+script = ExtResource("7_door")
+target_scene = "res://Scenes/room2.tscn"
+target_spawn = "SpawnFromKitchen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorToRoom2"]
+shape = SubResource("RectangleShape2D_door")
+
+[node name="SpawnFromRoom2" type="Marker2D" parent="."]
+position = Vector2(400, 380)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 380)
+script = ExtResource("6_camera")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_pixel")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -826.0
+offset_top = -566.0
+offset_right = -140.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+script = ExtResource("4_canvas")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_screen")
+mesh = SubResource("QuadMesh_screen")

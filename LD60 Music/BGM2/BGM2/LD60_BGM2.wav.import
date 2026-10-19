@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccgkvr1iaob7b"
+path="res://.godot/imported/LD60_BGM2.wav-afbefa4bf6fb3ede733639abf19fe484.sample"
+
+[deps]
+
+source_file="res://LD60 Music/BGM2/BGM2/LD60_BGM2.wav"
+dest_files=["res://.godot/imported/LD60_BGM2.wav-afbefa4bf6fb3ede733639abf19fe484.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

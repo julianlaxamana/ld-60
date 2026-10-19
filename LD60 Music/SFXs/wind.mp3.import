@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://do4sdfguo7khv"
+path="res://.godot/imported/wind.mp3-7f7fb57b45543065b750ca792550dea9.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/wind.mp3"
+dest_files=["res://.godot/imported/wind.mp3-7f7fb57b45543065b750ca792550dea9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

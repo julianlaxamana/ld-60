@@ -1,0 +1,353 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://cptmwvr5tfton" path="res://Scenes/player.tscn" id="1_player"]
+[ext_resource type="Shader" uid="uid://c2fn1n4cjxx5q" path="res://Shaders/pixel.gdshader" id="3_pixel"]
+[ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="4_canvas"]
+[ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="5_screen"]
+[ext_resource type="Script" uid="uid://b44wyhmnco43g" path="res://Scenes/camera.gd" id="6_camera"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="7_door"]
+[ext_resource type="PackedScene" path="res://Scenes/tree.tscn" id="8_tree"]
+[ext_resource type="PackedScene" uid="uid://b3spdrmnstr01" path="res://Scenes/spider.tscn" id="9_spider"]
+[ext_resource type="Script" path="res://Scripts/spider_gate.gd" id="10_gate"]
+[ext_resource type="Texture2D" path="res://Sprites/web.png" id="11_web"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pixel"]
+shader = ExtResource("3_pixel")
+shader_parameter/pixel_size = 3.000000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_screen"]
+shader = ExtResource("5_screen")
+
+[sub_resource type="QuadMesh" id="QuadMesh_screen"]
+size = Vector2(1280, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_side"]
+size = Vector2(160, 1500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_topbottom"]
+size = Vector2(2300, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_web"]
+size = Vector2(80, 260)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(80, 180)
+
+[node name="Forest" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Ground" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -1200.0
+offset_top = -900.0
+offset_right = 3200.0
+offset_bottom = 2100.0
+color = Color(0.05, 0.09, 0.06, 1)
+
+[node name="Path" type="ColorRect" parent="."]
+z_index = -1
+offset_left = 1500.0
+offset_top = 540.0
+offset_right = 2400.0
+offset_bottom = 660.0
+color = Color(0.11, 0.1, 0.07, 1)
+
+[node name="PathWest" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -400.0
+offset_top = 770.0
+offset_right = 300.0
+offset_bottom = 890.0
+color = Color(0.11, 0.1, 0.07, 1)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_player")]
+position = Vector2(1860, 600)
+
+[node name="Tree" parent="." instance=ExtResource("8_tree")]
+position = Vector2(0, 40)
+
+[node name="Tree2" parent="." instance=ExtResource("8_tree")]
+position = Vector2(0, 1240)
+
+[node name="Tree3" parent="." instance=ExtResource("8_tree")]
+position = Vector2(130, 40)
+
+[node name="Tree4" parent="." instance=ExtResource("8_tree")]
+position = Vector2(130, 1240)
+
+[node name="Tree5" parent="." instance=ExtResource("8_tree")]
+position = Vector2(260, 40)
+
+[node name="Tree6" parent="." instance=ExtResource("8_tree")]
+position = Vector2(260, 1240)
+
+[node name="Tree7" parent="." instance=ExtResource("8_tree")]
+position = Vector2(390, 40)
+
+[node name="Tree8" parent="." instance=ExtResource("8_tree")]
+position = Vector2(390, 1240)
+
+[node name="Tree9" parent="." instance=ExtResource("8_tree")]
+position = Vector2(520, 40)
+
+[node name="Tree10" parent="." instance=ExtResource("8_tree")]
+position = Vector2(520, 1240)
+
+[node name="Tree11" parent="." instance=ExtResource("8_tree")]
+position = Vector2(650, 40)
+
+[node name="Tree12" parent="." instance=ExtResource("8_tree")]
+position = Vector2(650, 1240)
+
+[node name="Tree13" parent="." instance=ExtResource("8_tree")]
+position = Vector2(780, 40)
+
+[node name="Tree14" parent="." instance=ExtResource("8_tree")]
+position = Vector2(780, 1240)
+
+[node name="Tree15" parent="." instance=ExtResource("8_tree")]
+position = Vector2(910, 40)
+
+[node name="Tree16" parent="." instance=ExtResource("8_tree")]
+position = Vector2(910, 1240)
+
+[node name="Tree17" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1040, 40)
+
+[node name="Tree18" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1040, 1240)
+
+[node name="Tree19" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1170, 40)
+
+[node name="Tree20" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1170, 1240)
+
+[node name="Tree21" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1300, 40)
+
+[node name="Tree22" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1300, 1240)
+
+[node name="Tree23" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1430, 40)
+
+[node name="Tree24" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1430, 1240)
+
+[node name="Tree25" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1560, 40)
+
+[node name="Tree26" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1560, 1240)
+
+[node name="Tree27" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1690, 40)
+
+[node name="Tree28" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1690, 1240)
+
+[node name="Tree29" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1820, 40)
+
+[node name="Tree30" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1820, 1240)
+
+[node name="Tree31" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1950, 40)
+
+[node name="Tree32" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1950, 1240)
+
+[node name="Tree33" parent="." instance=ExtResource("8_tree")]
+position = Vector2(0, 170)
+
+[node name="Tree34" parent="." instance=ExtResource("8_tree")]
+position = Vector2(2000, 170)
+
+[node name="Tree35" parent="." instance=ExtResource("8_tree")]
+position = Vector2(0, 300)
+
+[node name="Tree36" parent="." instance=ExtResource("8_tree")]
+position = Vector2(2000, 300)
+
+[node name="Tree37" parent="." instance=ExtResource("8_tree")]
+position = Vector2(0, 430)
+
+[node name="Tree38" parent="." instance=ExtResource("8_tree")]
+position = Vector2(2000, 430)
+
+[node name="Tree39" parent="." instance=ExtResource("8_tree")]
+position = Vector2(0, 560)
+
+[node name="Tree42" parent="." instance=ExtResource("8_tree")]
+position = Vector2(2000, 820)
+
+[node name="Tree44" parent="." instance=ExtResource("8_tree")]
+position = Vector2(2000, 950)
+
+[node name="Tree45" parent="." instance=ExtResource("8_tree")]
+position = Vector2(0, 1080)
+
+[node name="Tree46" parent="." instance=ExtResource("8_tree")]
+position = Vector2(2000, 1080)
+
+[node name="Tree47" parent="." instance=ExtResource("8_tree")]
+position = Vector2(830, 510)
+
+[node name="Tree48" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1383, 377)
+
+[node name="Tree49" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1190, 698)
+
+[node name="Tree50" parent="." instance=ExtResource("8_tree")]
+position = Vector2(881, 262)
+
+[node name="Tree51" parent="." instance=ExtResource("8_tree")]
+position = Vector2(388, 901)
+
+[node name="Tree52" parent="." instance=ExtResource("8_tree")]
+position = Vector2(579, 377)
+
+[node name="Tree53" parent="." instance=ExtResource("8_tree")]
+position = Vector2(690, 874)
+
+[node name="Tree54" parent="." instance=ExtResource("8_tree")]
+position = Vector2(218, 642)
+
+[node name="Tree55" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1687, 390)
+
+[node name="Tree56" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1478, 863)
+
+[node name="Tree57" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1339, 1051)
+
+[node name="Tree58" parent="." instance=ExtResource("8_tree")]
+position = Vector2(421, 529)
+
+[node name="Tree59" parent="." instance=ExtResource("8_tree")]
+position = Vector2(396, 254)
+
+[node name="Tree60" parent="." instance=ExtResource("8_tree")]
+position = Vector2(998, 927)
+
+[node name="Tree61" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1708, 1018)
+
+[node name="Tree62" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1100, 481)
+
+[node name="Tree63" parent="." instance=ExtResource("8_tree")]
+position = Vector2(660, 646)
+
+[node name="Tree64" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1185, 236)
+
+[node name="Tree65" parent="." instance=ExtResource("8_tree")]
+position = Vector2(1723, 785)
+
+[node name="Tree66" parent="." instance=ExtResource("8_tree")]
+position = Vector2(575, 1072)
+
+[node name="Tree67" parent="." instance=ExtResource("8_tree")]
+position = Vector2(207, 1017)
+
+[node name="Tree68" parent="." instance=ExtResource("8_tree")]
+position = Vector2(228, 423)
+
+[node name="Spider" parent="." node_paths=PackedStringArray("target") groups=["gate_spiders"] instance=ExtResource("9_spider")]
+position = Vector2(1190, 548)
+target = NodePath("../CharacterBody2D")
+ambush_range = 350.0
+
+[node name="Spider2" parent="." node_paths=PackedStringArray("target") groups=["gate_spiders"] instance=ExtResource("9_spider")]
+position = Vector2(660, 496)
+target = NodePath("../CharacterBody2D")
+ambush_range = 350.0
+
+[node name="Web" type="StaticBody2D" parent="."]
+position = Vector2(40, 830)
+script = ExtResource("10_gate")
+
+[node name="Sprite2D" type="Sprite2D" parent="Web"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("11_web")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Web"]
+shape = SubResource("RectangleShape2D_web")
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(-80, 600)
+shape = SubResource("RectangleShape2D_side")
+
+[node name="Right" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(2160, 600)
+shape = SubResource("RectangleShape2D_side")
+
+[node name="Top" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(1000, 0)
+shape = SubResource("RectangleShape2D_topbottom")
+
+[node name="Bottom" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(1000, 1260)
+shape = SubResource("RectangleShape2D_topbottom")
+
+[node name="DoorToRoom2" type="Area2D" parent="."]
+position = Vector2(2060, 600)
+script = ExtResource("7_door")
+target_scene = "res://Scenes/room2.tscn"
+target_spawn = "SpawnFromForest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorToRoom2"]
+shape = SubResource("RectangleShape2D_door")
+
+[node name="DoorToForest2" type="Area2D" parent="."]
+position = Vector2(-20, 830)
+script = ExtResource("7_door")
+target_scene = "res://Scenes/forest2.tscn"
+target_spawn = "SpawnFromForest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorToForest2"]
+shape = SubResource("RectangleShape2D_door")
+
+[node name="SpawnFromForest2" type="Marker2D" parent="."]
+position = Vector2(150, 830)
+
+[node name="SpawnFromRoom2" type="Marker2D" parent="."]
+position = Vector2(1860, 600)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1860, 600)
+script = ExtResource("6_camera")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_pixel")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -826.0
+offset_top = -566.0
+offset_right = -140.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+script = ExtResource("4_canvas")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_screen")
+mesh = SubResource("QuadMesh_screen")

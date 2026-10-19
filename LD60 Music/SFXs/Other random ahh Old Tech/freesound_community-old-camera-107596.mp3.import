@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cortri8q2h51m"
+path="res://.godot/imported/freesound_community-old-camera-107596.mp3-6ebb2bdd1eaf36cb99c1ae7a608e10c1.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/Other random ahh Old Tech/freesound_community-old-camera-107596.mp3"
+dest_files=["res://.godot/imported/freesound_community-old-camera-107596.mp3-6ebb2bdd1eaf36cb99c1ae7a608e10c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

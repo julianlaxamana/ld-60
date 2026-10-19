@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1iu54tjdmvrg"
+path="res://.godot/imported/glitch.mp3-03cbfb3dfcd45393fea9ed54768ddd51.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/shutdown + turn up (s)/glitch.mp3"
+dest_files=["res://.godot/imported/glitch.mp3-03cbfb3dfcd45393fea9ed54768ddd51.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

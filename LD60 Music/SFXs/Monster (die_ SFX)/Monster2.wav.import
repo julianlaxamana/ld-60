@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmw5gjjb4dhth"
+path="res://.godot/imported/Monster2.wav-86fcc18cd15a864b2dad454bb58fa4bc.sample"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/Monster (die_ SFX)/Monster2.wav"
+dest_files=["res://.godot/imported/Monster2.wav-86fcc18cd15a864b2dad454bb58fa4bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

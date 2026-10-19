@@ -1,0 +1,58 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/boss_spider.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dd1de7ir6nxmu" path="res://Sprites/f spider monster left 1.png" id="2_left1"]
+[ext_resource type="Texture2D" uid="uid://bgsndb7nmd0ox" path="res://Sprites/f spider monster left 2.png" id="3_left2"]
+[ext_resource type="Texture2D" uid="uid://cgidk7lhd4rvu" path="res://Sprites/f spider monster right 1.png" id="4_right1"]
+[ext_resource type="Texture2D" uid="uid://dtonyqo1sxqy6" path="res://Sprites/f spider monster right 2.png" id="5_right2"]
+[ext_resource type="Texture2D" uid="uid://yy3v3tgtjte4" path="res://Sprites/f spider monster damaged.png" id="6_damaged"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spider"]
+radius = 90.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spider"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_damaged")
+}],
+"loop": true,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_left1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_left2")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_right1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_right2")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 6.0
+}]
+
+[node name="BossSpider" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_spider")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.75, 0.35, 0.4, 1)
+texture_filter = 1
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_spider")
+animation = &"walk_left"

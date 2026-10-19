@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp0wyo6tgk5m6"
+path="res://.godot/imported/Walking.mp3-ac6597396e1bcb2d1e243a07ee270776.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/Walking.mp3"
+dest_files=["res://.godot/imported/Walking.mp3-ac6597396e1bcb2d1e243a07ee270776.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

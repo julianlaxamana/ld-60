@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://toah412svjsw"]
+
+[ext_resource type="Script" uid="uid://ck1l2polvk4qs" path="res://Scripts/transition_1.gd" id="1_afylw"]
+[ext_resource type="Shader" uid="uid://c2fn1n4cjxx5q" path="res://Shaders/pixel.gdshader" id="1_hun8f"]
+[ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="2_afylw"]
+[ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="3_6xjdw"]
+[ext_resource type="FontFile" uid="uid://bg6w3u7u81nsp" path="res://GermaniaOne-Regular.ttf" id="4_qhiho"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ssb7l"]
+line_spacing = 4.0
+font = ExtResource("4_qhiho")
+font_size = 100
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_be107"]
+shader = ExtResource("1_hun8f")
+shader_parameter/pixel_size = 3.000000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_28pxu"]
+shader = ExtResource("3_6xjdw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_uushw"]
+size = Vector2(1280, 720)
+
+[node name="Transition1" type="Node2D" unique_id=1510598261]
+script = ExtResource("1_afylw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1205900047]
+offset_left = -735.0
+offset_top = -351.0
+offset_right = 2781.2532
+offset_bottom = 1640.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="." unique_id=1372956402]
+offset_left = 2.0
+offset_top = -5.0
+offset_right = 1279.0
+offset_bottom = 722.0
+text = "day 1"
+label_settings = SubResource("LabelSettings_ssb7l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1375807203]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=613058987]
+material = SubResource("ShaderMaterial_be107")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -826.0
+offset_top = -566.0
+offset_right = -140.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=843711909]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+script = ExtResource("2_afylw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer2" unique_id=1293082611]
+material = SubResource("ShaderMaterial_28pxu")
+mesh = SubResource("QuadMesh_uushw")
+
+[node name="Timer" type="Timer" parent="." unique_id=278418802]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

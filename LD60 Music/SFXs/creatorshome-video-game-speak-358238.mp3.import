@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bypa1cbwqqaaj"
+path="res://.godot/imported/creatorshome-video-game-speak-358238.mp3-3b824723634fb49d9541420befbe2bd6.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/creatorshome-video-game-speak-358238.mp3"
+dest_files=["res://.godot/imported/creatorshome-video-game-speak-358238.mp3-3b824723634fb49d9541420befbe2bd6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

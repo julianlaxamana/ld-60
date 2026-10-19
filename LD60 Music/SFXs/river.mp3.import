@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nvkeqwyowfkq"
+path="res://.godot/imported/river.mp3-55183d626b772de05434972166950f1a.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/river.mp3"
+dest_files=["res://.godot/imported/river.mp3-55183d626b772de05434972166950f1a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

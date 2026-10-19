@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jj82ol307lsb"
+path="res://.godot/imported/turn on2.mp3-83fc4301194aa1eaf2dbd9c829e2673f.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/shutdown + turn up (s)/turn on2.mp3"
+dest_files=["res://.godot/imported/turn on2.mp3-83fc4301194aa1eaf2dbd9c829e2673f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

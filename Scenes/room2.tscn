@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://cagb1i3635v8b"]
+
+[ext_resource type="PackedScene" uid="uid://cptmwvr5tfton" path="res://Scenes/player.tscn" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://cgfitrqfnitl7" path="res://light.png" id="2_light"]
+[ext_resource type="Shader" uid="uid://c2fn1n4cjxx5q" path="res://Shaders/pixel.gdshader" id="3_pixel"]
+[ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="4_canvas"]
+[ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="5_screen"]
+[ext_resource type="Script" uid="uid://b44wyhmnco43g" path="res://Scenes/camera.gd" id="6_camera"]
+[ext_resource type="Script" uid="uid://b75tvcjwfwn5e" path="res://Scripts/door.gd" id="7_door"]
+[ext_resource type="Texture2D" uid="uid://dbmgudu25abib" path="res://Sprites/couch.png" id="8_couch"]
+[ext_resource type="Texture2D" uid="uid://cpq2hh37ewjqi" path="res://Sprites/tv off.png" id="9_tv"]
+[ext_resource type="Script" uid="uid://d228x0vc2emd" path="res://Scripts/tv.gd" id="10_tv"]
+[ext_resource type="Script" uid="uid://b4xs0w5xwxiay" path="res://Scripts/tape_box.gd" id="11_tape"]
+[ext_resource type="Script" uid="uid://claui55grnsny" path="res://Scripts/couch.gd" id="12_couch"]
+[ext_resource type="Texture2D" path="res://Sprites/couch back.png" id="13_couch_back"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_side"]
+size = Vector2(160, 800)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_topbottom"]
+size = Vector2(1320, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_couch"]
+size = Vector2(220, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv"]
+size = Vector2(80, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(80, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv_talk"]
+size = Vector2(200, 220)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tape_reach"]
+size = Vector2(120, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_couch_reach"]
+size = Vector2(260, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door_top"]
+size = Vector2(180, 80)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pixel"]
+shader = ExtResource("3_pixel")
+shader_parameter/pixel_size = 3.000000095
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_screen"]
+shader = ExtResource("5_screen")
+
+[sub_resource type="QuadMesh" id="QuadMesh_screen"]
+size = Vector2(1280, 720)
+
+[node name="Room2" type="Node2D" unique_id=1535827055]
+
+[node name="Background" type="ColorRect" parent="." unique_id=1853424285]
+offset_left = -1199.0
+offset_top = -901.0
+offset_right = 2201.0
+offset_bottom = 1499.0
+color = Color(0, 0, 0, 1)
+
+[node name="Light" type="Sprite2D" parent="." unique_id=722929539]
+texture_filter = 1
+position = Vector2(1060, 320)
+scale = Vector2(-9.9375, 6.281249)
+texture = ExtResource("2_light")
+
+[node name="CouchBack" type="Sprite2D" parent="." unique_id=1735604698]
+texture_filter = 1
+position = Vector2(500, 216)
+scale = Vector2(4, 4)
+texture = ExtResource("13_couch_back")
+
+[node name="Couch" type="Sprite2D" parent="." unique_id=1735604697]
+texture_filter = 1
+position = Vector2(500, 300)
+rotation = 3.1415927
+scale = Vector2(4, 4)
+texture = ExtResource("8_couch")
+
+[node name="TV" type="Sprite2D" parent="." unique_id=272613499]
+texture_filter = 1
+position = Vector2(500, 480)
+scale = Vector2(4, 4)
+texture = ExtResource("9_tv")
+
+[node name="CharacterBody2D" parent="." unique_id=133867518 instance=ExtResource("1_player")]
+position = Vector2(880, 320)
+
+[node name="WallTop" type="ColorRect" parent="." unique_id=1161793509]
+offset_left = -1200.0
+offset_top = -900.0
+offset_right = 2200.0
+
+[node name="WallBottom" type="ColorRect" parent="." unique_id=1687858206]
+offset_left = -1200.0
+offset_top = 640.0
+offset_right = 2200.0
+offset_bottom = 1500.0
+
+[node name="WallLeft" type="ColorRect" parent="." unique_id=1620031439]
+offset_left = -1200.0
+offset_top = -900.0
+offset_bottom = 1500.0
+
+[node name="WallRight" type="ColorRect" parent="." unique_id=535105363]
+offset_left = 1000.0
+offset_top = -900.0
+offset_right = 2200.0
+offset_bottom = 1500.0
+
+[node name="DoorPanel" type="ColorRect" parent="." unique_id=581913366]
+offset_left = 930.0
+offset_top = 260.0
+offset_right = 1188.4213
+offset_bottom = 292.3829
+rotation = 0.41887903
+
+[node name="ForestDoorPanel" type="ColorRect" parent="." unique_id=2103817411]
+offset_left = -148.0
+offset_top = 322.0
+offset_right = 110.42
+offset_bottom = 354.38
+rotation = -0.41887903
+
+[node name="KitchenDoorPanel" type="ColorRect" parent="." unique_id=2013067191]
+offset_left = 790.0
+offset_top = 70.0
+offset_right = 1048.42
+offset_bottom = 102.38
+rotation = -1.1519173
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=750578589]
+
+[node name="Left" type="CollisionShape2D" parent="StaticBody2D" unique_id=626229285]
+position = Vector2(-80, 320)
+shape = SubResource("RectangleShape2D_side")
+
+[node name="Right" type="CollisionShape2D" parent="StaticBody2D" unique_id=1959891693]
+position = Vector2(1080, 320)
+shape = SubResource("RectangleShape2D_side")
+
+[node name="Top" type="CollisionShape2D" parent="StaticBody2D" unique_id=1299154263]
+position = Vector2(500, -30)
+shape = SubResource("RectangleShape2D_topbottom")
+
+[node name="Bottom" type="CollisionShape2D" parent="StaticBody2D" unique_id=1057524085]
+position = Vector2(500, 670)
+shape = SubResource("RectangleShape2D_topbottom")
+
+[node name="Couch" type="CollisionShape2D" parent="StaticBody2D" unique_id=932591733]
+position = Vector2(500, 244)
+shape = SubResource("RectangleShape2D_couch")
+
+[node name="TV" type="CollisionShape2D" parent="StaticBody2D" unique_id=2117217721]
+position = Vector2(500, 490)
+shape = SubResource("RectangleShape2D_tv")
+
+[node name="DoorToMap" type="Area2D" parent="." unique_id=702942064]
+position = Vector2(1020, 320)
+script = ExtResource("7_door")
+target_scene = "res://Scenes/map.tscn"
+target_spawn = "SpawnFromRoom2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorToMap" unique_id=479677577]
+shape = SubResource("RectangleShape2D_door")
+
+[node name="TVInteract" type="Area2D" parent="." unique_id=1518107409 node_paths=PackedStringArray("screen")]
+position = Vector2(500, 480)
+script = ExtResource("10_tv")
+screen = NodePath("../TV")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TVInteract" unique_id=1038825079]
+shape = SubResource("RectangleShape2D_tv_talk")
+
+[node name="TapeBox" type="Area2D" parent="." unique_id=515641400 node_paths=PackedStringArray("tv")]
+position = Vector2(690, 500)
+script = ExtResource("11_tape")
+tv = NodePath("../TVInteract")
+
+[node name="Sprite2D" type="Sprite2D" parent="TapeBox" unique_id=1019944544]
+texture_filter = 1
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TapeBox" unique_id=219074033]
+shape = SubResource("RectangleShape2D_tape_reach")
+
+[node name="CouchInteract" type="Area2D" parent="." unique_id=1345807233 node_paths=PackedStringArray("tv")]
+position = Vector2(500, 330)
+script = ExtResource("12_couch")
+tv = NodePath("../TVInteract")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CouchInteract" unique_id=93526129]
+shape = SubResource("RectangleShape2D_couch_reach")
+
+[node name="DoorToForest" type="Area2D" parent="." unique_id=925386684]
+position = Vector2(20, 320)
+script = ExtResource("7_door")
+target_scene = "res://Scenes/forest.tscn"
+target_spawn = "SpawnFromRoom2"
+lock = "outside"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorToForest" unique_id=283000853]
+shape = SubResource("RectangleShape2D_door")
+
+[node name="SpawnFromForest" type="Marker2D" parent="." unique_id=1586141729]
+position = Vector2(130, 320)
+
+[node name="DoorToKitchen" type="Area2D" parent="." unique_id=1418889673]
+position = Vector2(850, 20)
+script = ExtResource("7_door")
+target_scene = "res://Scenes/kitchen.tscn"
+target_spawn = "SpawnFromRoom2"
+lock = "kitchen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorToKitchen" unique_id=1635574472]
+shape = SubResource("RectangleShape2D_door_top")
+
+[node name="SpawnFromKitchen" type="Marker2D" parent="." unique_id=1145339468]
+position = Vector2(850, 160)
+
+[node name="SpawnFromMap" type="Marker2D" parent="." unique_id=2012582723]
+position = Vector2(880, 320)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2130659624]
+position = Vector2(880, 320)
+script = ExtResource("6_camera")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1004404754]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1835618144]
+material = SubResource("ShaderMaterial_pixel")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -826.0
+offset_top = -566.0
+offset_right = -140.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=360895609]
+offset = Vector2(640, 360)
+transform = Transform2D(1, 0, 0, 1, 640, 360)
+script = ExtResource("4_canvas")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer2" unique_id=551346192]
+material = SubResource("ShaderMaterial_screen")
+mesh = SubResource("QuadMesh_screen")

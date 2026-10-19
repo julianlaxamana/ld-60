@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://bo5lyy3uesf4i" path="res://Scripts/canvas_layer.gd" id="3_q0mm3"]
 [ext_resource type="Shader" uid="uid://km5x4l4c3tgi" path="res://Shaders/screen_effect.gdshader" id="4_np2xp"]
 [ext_resource type="Script" uid="uid://b44wyhmnco43g" path="res://Scenes/camera.gd" id="5_q0mm3"]
+[ext_resource type="Script" uid="uid://b75tvcjwfwn5e" path="res://Scripts/door.gd" id="7_door"]
+[ext_resource type="Script" path="res://Scripts/wake_up.gd" id="8_wake"]
+[ext_resource type="Texture2D" uid="uid://g155b604qwve" path="res://Sprites/bed sleep.png" id="9_bed"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w7jjh"]
 shader = ExtResource("2_myvm1")
@@ -23,6 +26,12 @@ size = Vector2(159, 764)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgrle"]
 size = Vector2(1337, 52)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(80, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bed"]
+size = Vector2(200, 110)
+
 [node name="Map" type="Node2D" unique_id=883407230]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1663659277]
@@ -39,7 +48,21 @@ scale = Vector2(9.9375, 6.281249)
 texture = ExtResource("1_np2xp")
 
 [node name="CharacterBody2D" parent="." unique_id=1314263702 instance=ExtResource("1_ci6au")]
-position = Vector2(520, 280)
+position = Vector2(700, 240)
+
+[node name="Bed" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(520, 200)
+script = ExtResource("8_wake")
+player = NodePath("../CharacterBody2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bed"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("9_bed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_bed")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1809983776]
 offset = Vector2(640, 360)
@@ -119,3 +142,15 @@ shape = SubResource("RectangleShape2D_pgrle")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=123217219]
 position = Vector2(-137, 370)
 shape = SubResource("RectangleShape2D_dwvqn")
+
+[node name="DoorToRoom2" type="Area2D" parent="." unique_id=1730418265]
+position = Vector2(-20, 450)
+script = ExtResource("7_door")
+target_scene = "res://Scenes/room2.tscn"
+target_spawn = "SpawnFromMap"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorToRoom2" unique_id=298154702]
+shape = SubResource("RectangleShape2D_door")
+
+[node name="SpawnFromRoom2" type="Marker2D" parent="." unique_id=1460283917]
+position = Vector2(110, 450)

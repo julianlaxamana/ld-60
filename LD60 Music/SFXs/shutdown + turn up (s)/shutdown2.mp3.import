@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cb1oo3ff8ghqu"
+path="res://.godot/imported/shutdown2.mp3-84a9bc6dfb07444c3bdb6218d17c14ba.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/shutdown + turn up (s)/shutdown2.mp3"
+dest_files=["res://.godot/imported/shutdown2.mp3-84a9bc6dfb07444c3bdb6218d17c14ba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

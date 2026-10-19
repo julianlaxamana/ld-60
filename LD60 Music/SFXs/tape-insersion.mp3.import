@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c20djlw4xa8l3"
+path="res://.godot/imported/tape-insersion.mp3-0b71aa0d08dd9c943cfb0935ac10ce55.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/tape-insersion.mp3"
+dest_files=["res://.godot/imported/tape-insersion.mp3-0b71aa0d08dd9c943cfb0935ac10ce55.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

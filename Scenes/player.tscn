@@ -1,11 +1,292 @@
 [gd_scene format=3 uid="uid://cptmwvr5tfton"]
 
 [ext_resource type="Script" uid="uid://0lgik5m4kc7y" path="res://Scripts/controller.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bg0lib33mug34" path="res://icon.svg" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://bktg3685r2k44" path="res://Sprites/mc walk cycle/mc stand down.png" id="2_tex"]
+[ext_resource type="Texture2D" uid="uid://cldyt5rpsukm0" path="res://Sprites/mc walk cycle/mc walk down 1.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://cbmnpuqthwt8q" path="res://Sprites/mc walk cycle/mc walk down 2.png" id="4_tex"]
+[ext_resource type="Texture2D" uid="uid://ba6c73hfjeohn" path="res://Sprites/mc walk +knife equipped/mc stand down w_ knife.png" id="5_tex"]
+[ext_resource type="Texture2D" uid="uid://d2w7lu6nwiuv7" path="res://Sprites/mc walk +knife equipped/mc walk down 1 w_ knife.png" id="6_tex"]
+[ext_resource type="Texture2D" uid="uid://cu8tni1ufgcr" path="res://Sprites/mc walk +knife equipped/mc walk down 2 w_ knife.png" id="7_tex"]
+[ext_resource type="Texture2D" uid="uid://1xeq0n8urcug" path="res://Sprites/attack animations/down attack 1.png" id="8_tex"]
+[ext_resource type="Texture2D" uid="uid://c4esktf10el3d" path="res://Sprites/attack animations/down attack 2.png" id="9_tex"]
+[ext_resource type="Texture2D" uid="uid://c4ivy88ws6sep" path="res://Sprites/attack animations/down attack 3.png" id="10_tex"]
+[ext_resource type="Texture2D" uid="uid://xtokkw75xdgk" path="res://Sprites/attack animations/down attack 4.png" id="11_tex"]
+[ext_resource type="Texture2D" uid="uid://bq4sj7o6mp2sj" path="res://Sprites/attack animations/down attack 5.png" id="12_tex"]
+[ext_resource type="Texture2D" uid="uid://ct15rsg07lgl1" path="res://Sprites/mc walk cycle/mc stand left_.png" id="13_tex"]
+[ext_resource type="Texture2D" uid="uid://b6c3nl4nwrwy6" path="res://Sprites/mc walk cycle/mc walk left 1.png" id="14_tex"]
+[ext_resource type="Texture2D" uid="uid://d16k6i5iayvb" path="res://Sprites/mc walk cycle/mc walk left 2.png" id="15_tex"]
+[ext_resource type="Texture2D" uid="uid://dn7kxaax5sjfx" path="res://Sprites/mc walk +knife equipped/mc stand left w_ knife.png" id="16_tex"]
+[ext_resource type="Texture2D" uid="uid://ct4u6ge725ab6" path="res://Sprites/mc walk +knife equipped/mc walk left 1 w_ knife.png" id="17_tex"]
+[ext_resource type="Texture2D" uid="uid://c6ofijud5ams0" path="res://Sprites/mc walk +knife equipped/mc walk left 2 w_ knife.png" id="18_tex"]
+[ext_resource type="Texture2D" uid="uid://v55wvwrhj0ac" path="res://Sprites/attack animations/left attack 1.png" id="19_tex"]
+[ext_resource type="Texture2D" uid="uid://cbow30akurepi" path="res://Sprites/attack animations/left attack 2.png" id="20_tex"]
+[ext_resource type="Texture2D" uid="uid://ds2vxhm005rce" path="res://Sprites/attack animations/left attack 3.png" id="21_tex"]
+[ext_resource type="Texture2D" uid="uid://tom3oxarc2wn" path="res://Sprites/attack animations/left attack 4.png" id="22_tex"]
+[ext_resource type="Texture2D" uid="uid://yutlu2p3in13" path="res://Sprites/attack animations/left attack 5.png" id="23_tex"]
+[ext_resource type="Texture2D" uid="uid://b63lgqptf70ab" path="res://Sprites/mc walk cycle/mc stand right.png" id="24_tex"]
+[ext_resource type="Texture2D" uid="uid://dbcxewb7nifts" path="res://Sprites/mc walk cycle/mc walk right 1.png" id="25_tex"]
+[ext_resource type="Texture2D" uid="uid://8fdddyp515k5" path="res://Sprites/mc walk cycle/mc walk right 2.png" id="26_tex"]
+[ext_resource type="Texture2D" uid="uid://cddbejs1d408p" path="res://Sprites/mc walk +knife equipped/mc stand right w_ knife.png" id="27_tex"]
+[ext_resource type="Texture2D" uid="uid://bxcm6suuir01x" path="res://Sprites/mc walk +knife equipped/mc walk right 1 w_ knife.png" id="28_tex"]
+[ext_resource type="Texture2D" uid="uid://bj0go8mtu1usb" path="res://Sprites/mc walk +knife equipped/mc walk right 2 w_ knife.png" id="29_tex"]
+[ext_resource type="Texture2D" uid="uid://7qertv3v8poj" path="res://Sprites/attack animations/right attack 1.png" id="30_tex"]
+[ext_resource type="Texture2D" uid="uid://b1wuymuih71a6" path="res://Sprites/attack animations/right attack 2.png" id="31_tex"]
+[ext_resource type="Texture2D" uid="uid://cgw2te1jvyquv" path="res://Sprites/attack animations/right attack 3.png" id="32_tex"]
+[ext_resource type="Texture2D" uid="uid://b5vqhvtayewkk" path="res://Sprites/attack animations/right attack 4.png" id="33_tex"]
+[ext_resource type="Texture2D" uid="uid://cw8t7qnkctdc" path="res://Sprites/attack animations/right attack 5.png" id="34_tex"]
+[ext_resource type="Texture2D" uid="uid://b7p4dkcdi3yyk" path="res://Sprites/mc walk cycle/mc stand up.png" id="35_tex"]
+[ext_resource type="Texture2D" uid="uid://b5kyg0cb7q11o" path="res://Sprites/mc walk cycle/mc walk up 1.png" id="36_tex"]
+[ext_resource type="Texture2D" uid="uid://v8mh5e0xbxgc" path="res://Sprites/mc walk cycle/mc walk up 2.png" id="37_tex"]
+[ext_resource type="Texture2D" uid="uid://bc22b5enttwkq" path="res://Sprites/mc walk +knife equipped/mc stand up w_ knife.png" id="38_tex"]
+[ext_resource type="Texture2D" uid="uid://djoecdhvgnlsg" path="res://Sprites/mc walk +knife equipped/mc walk up w_ knife.png" id="39_tex"]
+[ext_resource type="Texture2D" uid="uid://bumndydvn2wc" path="res://Sprites/mc walk +knife equipped/mc walk up 2 w_ knife.png" id="40_tex"]
+[ext_resource type="Texture2D" uid="uid://bis2i2n4khvji" path="res://Sprites/attack animations/up attack 1.png" id="41_tex"]
+[ext_resource type="Texture2D" uid="uid://cbpm7c1n32dvk" path="res://Sprites/attack animations/up attack 2.png" id="42_tex"]
+[ext_resource type="Texture2D" uid="uid://dqyjdmkt1sng0" path="res://Sprites/attack animations/up attack 3.png" id="43_tex"]
+[ext_resource type="Texture2D" uid="uid://pqianot8v1fo" path="res://Sprites/attack animations/up attack 4.png" id="44_tex"]
+[ext_resource type="Texture2D" uid="uid://bno1q88xn7j8g" path="res://Sprites/attack animations/up attack 5.png" id="45_tex"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgm4q"]
 radius = 64.0
 height = 138.15
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knife"]
+size = Vector2(100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tex")
+}],
+"loop": false,
+"name": &"attack_down",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tex")
+}],
+"loop": false,
+"name": &"attack_left",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_tex")
+}],
+"loop": false,
+"name": &"attack_right",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tex")
+}],
+"loop": false,
+"name": &"attack_up",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tex")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_tex")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_tex")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_tex")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tex")
+}],
+"loop": true,
+"name": &"knife_idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_tex")
+}],
+"loop": true,
+"name": &"knife_idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_tex")
+}],
+"loop": true,
+"name": &"knife_idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_tex")
+}],
+"loop": true,
+"name": &"knife_idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tex")
+}],
+"loop": true,
+"name": &"knife_walk_down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tex")
+}],
+"loop": true,
+"name": &"knife_walk_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tex")
+}],
+"loop": true,
+"name": &"knife_walk_right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_tex")
+}],
+"loop": true,
+"name": &"knife_walk_up",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tex")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tex")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tex")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_tex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_tex")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 6.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1314263702]
 script = ExtResource("1_cvnsp")
@@ -13,5 +294,14 @@ script = ExtResource("1_cvnsp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=61521265]
 shape = SubResource("CapsuleShape2D_rgm4q")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1579305976]
-texture = ExtResource("2_6t5aa")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1579305976]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_mc")
+animation = &"idle_down"
+
+[node name="KnifeHitbox" type="Area2D" parent="." unique_id=482915377]
+position = Vector2(0, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KnifeHitbox" unique_id=1938475120]
+shape = SubResource("RectangleShape2D_knife")

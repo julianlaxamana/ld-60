@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jvtfn644ajrk"
+path="res://.godot/imported/walk in water.mp3-5d18c204a484b1defbd76f02f2bb0667.mp3str"
+
+[deps]
+
+source_file="res://LD60 Music/SFXs/walk in water.mp3"
+dest_files=["res://.godot/imported/walk in water.mp3-5d18c204a484b1defbd76f02f2bb0667.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
